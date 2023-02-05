@@ -40,7 +40,7 @@ if (isset($_SESSION['pesan'])) {
             <div class="m-10 h-52 bg-[#0a088a] rounded-2xl shadow-sm relative flex items-center justify-between bg-repeat bg-contain" style="background-image: url(./img/bg-pattern1.png);">
                 <div class="text-left ml-11">
                     <div class="text-2xl leading-8 text-left text-white font-semibold drop-shadow-sm mb-5">Tambah Informasi <br> Penilaian</div>
-                    <a href="#" class="bg-[#01004C] px-2.5 py-2 text-white font-semibold rounded-md shadow-sm transition-all duration-150 hover:bg-[#0a088a] active:bg-[#1512d4]">Penilaian</a>
+                    <a href="laporanbaru.php" class="bg-[#01004C] px-2.5 py-2 text-white font-semibold rounded-md shadow-sm transition-all duration-150 hover:bg-[#0a088a] active:bg-[#1512d4]">Penilaian</a>
                 </div>
                 <img src="./img/report.png" class="h-60 mb-8 mr-8">
             </div>

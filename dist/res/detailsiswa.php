@@ -28,8 +28,8 @@
                             </div>
 
                             <div class="col-span-2 select-none">
-                                <div class="bg-[#1512d4]/30 rounded-xl text-center p-2 font-semibold text-xl">Poin
-                                    <div class="bg-[#1512d4]/70 rounded-xl py-1.5 text-white text-base"><?= $data['point'] ?></div>
+                                <div class="<?= $data['point'] >= '80' ? 'bg-[#149627]/30' : ($data['point'] >= '50' ? 'bg-yellow-500/50' : 'bg-[#bd160d]/30') ?> rounded-xl text-center p-2 font-semibold text-xl">Poin
+                                    <div class="<?= $data['point'] >= '80' ? 'bg-[#149627]/70' : ($data['point'] >= '50' ? 'bg-yellow-500/70' : 'bg-[#bd160d]/70') ?> rounded-xl py-1.5 text-white text-base"><?= $data['point'] ?></div>
                                 </div>
                             </div>
 
@@ -88,11 +88,26 @@
                             <button type="button" class="inline-flex justify-center rounded-md border border-transparent bg-gray-300 hover:bg-gray-400 active:bg-gray-500 py-2 w-32 text-sm font-semibold text-gray-800 shadow-sm transition-all" data-bs-dismiss="modal">Keluar</button>
                         </div>
                         <div>
-                            <button type="button" class="inline-flex justify-center rounded-md border border-transparent bg-gray-300 hover:bg-gray-400 active:bg-gray-500 py-2 w-32 text-sm font-semibold text-gray-800 shadow-sm transition-all" data-bs-dismiss="modal">SP1</button>
-                            <button type="button" class="inline-flex justify-center rounded-md border border-transparent bg-gray-300 hover:bg-gray-400 active:bg-gray-500 py-2 w-32 text-sm font-semibold text-gray-800 shadow-sm transition-all" data-bs-dismiss="modal">SP2</button>
-                            <button type="button" class="inline-flex justify-center rounded-md border border-transparent bg-gray-300 hover:bg-gray-400 active:bg-gray-500 py-2 w-32 text-sm font-semibold text-gray-800 shadow-sm transition-all" data-bs-dismiss="modal">SP3</button>
+                            <?php
+                            if ($data['point'] > '50' && $data['point'] <= '70') {
+                                echo '
+                                <button type="button" class="inline-flex justify-center rounded-md border border-transparent bg-gray-300 hover:bg-gray-400 active:bg-gray-500 py-2 w-32 text-sm font-semibold text-gray-800 shadow-sm transition-all" data-bs-dismiss="modal">SP1</button>
+                                ';
+                            } elseif ($data['point'] > '30' && $data['point'] <= '50') {
+                                echo '
+                                <button type="button" class="inline-flex justify-center rounded-md border border-transparent bg-gray-300 hover:bg-gray-400 active:bg-gray-500 py-2 w-32 text-sm font-semibold text-gray-800 shadow-sm transition-all" data-bs-dismiss="modal">SP2</button>
+                                ';
+                            } elseif ($data['point'] <= '30') {
+                                echo '
+                                <button type="button" class="inline-flex justify-center rounded-md border border-transparent bg-gray-300 hover:bg-gray-400 active:bg-gray-500 py-2 w-32 text-sm font-semibold text-gray-800 shadow-sm transition-all" data-bs-dismiss="modal">SP3</button>
+                                ';
+                            }
+                            ?>
+
                         </div>
                         <div>
+                            <button type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 py-2 w-32 text-sm font-semibold text-yellow-900 shadow-sm transition-all" name="bresetpasswordsiswa">Reset Password</button>
+
                             <button type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 py-2 w-32 text-sm font-semibold text-yellow-900 shadow-sm transition-all" name="bubahsiswa">Perbarui Data</button>
                         </div>
                     </div>

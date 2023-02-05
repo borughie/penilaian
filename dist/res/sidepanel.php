@@ -47,7 +47,7 @@
                         Terverifikasi
                     </a>
 
-                    <a href="./tambahan.php" class="relative text-left hover:text-[#3230bb] transition-all duration-150 rounded-lg w-full block hover:bg-[#1512d4]/20 active:bg-[#1512d4]/50 xl:py-2 xl:px-4 2xl:py-2.5 hover:pl-5 text-truncate">
+                    <a href="./laporantambahan.php" class="relative text-left hover:text-[#3230bb] transition-all duration-150 rounded-lg w-full block hover:bg-[#1512d4]/20 active:bg-[#1512d4]/50 xl:py-2 xl:px-4 2xl:py-2.5 hover:pl-5 text-truncate">
                         <div class="absolute h-6 w-1 left-0 rounded-l-[1px] rounded-r-2xl bg-inherit bg-white"></div>
                         <span class="fi fi-br-assept-document relative top-0.5 mr-2.5"></span>
                         Tambahan

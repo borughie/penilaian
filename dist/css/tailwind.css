@@ -3705,12 +3705,16 @@ textarea.form-control.is-invalid {
   grid-column: span 8 / span 8;
 }
 
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
+
 .col-span-4 {
   grid-column: span 4 / span 4;
 }
 
-.col-span-1 {
-  grid-column: span 1 / span 1;
+.row-span-2 {
+  grid-row: span 2 / span 2;
 }
 
 .row-span-3 {
@@ -3924,10 +3928,6 @@ textarea.form-control.is-invalid {
   height: 1rem;
 }
 
-.h-24 {
-  height: 6rem;
-}
-
 .h-full {
   height: 100%;
 }
@@ -3944,8 +3944,20 @@ textarea.form-control.is-invalid {
   height: 42px;
 }
 
+.h-24 {
+  height: 6rem;
+}
+
 .h-12 {
   height: 3rem;
+}
+
+.h-32 {
+  height: 8rem;
+}
+
+.h-20 {
+  height: 5rem;
 }
 
 .h-16 {
@@ -3976,12 +3988,12 @@ textarea.form-control.is-invalid {
   width: 1rem;
 }
 
-.w-40 {
-  width: 10rem;
-}
-
 .w-64 {
   width: 16rem;
+}
+
+.w-40 {
+  width: 10rem;
 }
 
 .w-fit {
@@ -3999,6 +4011,10 @@ textarea.form-control.is-invalid {
 
 .w-32 {
   width: 8rem;
+}
+
+.w-20 {
+  width: 5rem;
 }
 
 .w-auto {
@@ -4064,12 +4080,20 @@ textarea.form-control.is-invalid {
   grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .grid-cols-9 {
   grid-template-columns: repeat(9, minmax(0, 1fr));
 }
 
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-7 {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -4090,6 +4114,10 @@ textarea.form-control.is-invalid {
 
 .content-between {
   align-content: space-between;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-end {
@@ -4382,6 +4410,30 @@ textarea.form-control.is-invalid {
 .bg-yellow-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#149627\]\/30 {
+  background-color: rgb(20 150 39 / 0.3);
+}
+
+.bg-yellow-500\/50 {
+  background-color: rgb(234 179 8 / 0.5);
+}
+
+.bg-\[\#bd160d\]\/30 {
+  background-color: rgb(189 22 13 / 0.3);
+}
+
+.bg-\[\#149627\]\/70 {
+  background-color: rgb(20 150 39 / 0.7);
+}
+
+.bg-yellow-500\/70 {
+  background-color: rgb(234 179 8 / 0.7);
+}
+
+.bg-\[\#bd160d\]\/70 {
+  background-color: rgb(189 22 13 / 0.7);
 }
 
 .bg-red-50 {
@@ -4781,6 +4833,11 @@ textarea.form-control.is-invalid {
   color: rgb(241 245 249 / var(--tw-text-opacity));
 }
 
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
 .text-yellow-800 {
   --tw-text-opacity: 1;
   color: rgb(133 77 14 / var(--tw-text-opacity));
@@ -4789,11 +4846,6 @@ textarea.form-control.is-invalid {
 .text-green-800 {
   --tw-text-opacity: 1;
   color: rgb(22 101 52 / var(--tw-text-opacity));
-}
-
-.text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .text-transparent {
@@ -4978,13 +5030,13 @@ textarea.form-control.is-invalid {
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-yellow-400\/60:hover {
-  background-color: rgb(250 204 21 / 0.6);
-}
-
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-yellow-400\/60:hover {
+  background-color: rgb(250 204 21 / 0.6);
 }
 
 .hover\:bg-gray-400:hover {
