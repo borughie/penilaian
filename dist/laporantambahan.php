@@ -86,8 +86,8 @@ if (isset($_GET['hal'])) {
                 </div>
             </div>
             <div class="mx-10 p-6 bg-white shadow-sm rounded-2xl border overflow-hidden">
-                <div class="grid grid-cols-2 gap-3 items-start justify-bertween">
-                    <form action="./res/aksi_crud.php" method="post">
+                <form action="./res/aksi_crud.php" method="post">
+                    <div class="grid grid-cols-2 gap-3 items-start justify-bertween">
                         <div class="grid grid-cols-7 grid-flow-row 2xl:gap-6 gap-3 text-left align-bottom">
                             <div class="row-span-2 col-span-2">
                                 <div class="flex items-center h-full justify-center">
@@ -136,7 +136,7 @@ if (isset($_GET['hal'])) {
                             </div>
 
                             <div class="col-span-2">
-                                <label for="ubahpoint" class="block text-sm font-medium text-gray-700">ubahPoint</label>
+                                <label for="ubahpoint" class="block text-sm font-medium text-gray-700">Point</label>
                                 <input maxlength="50" type="text" name="tubahpoint" id="ubahpoint" class="text-slate-900 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                             </div>
 
@@ -153,9 +153,9 @@ if (isset($_GET['hal'])) {
                             </div>
 
                         </div>
-                    </form>
-                    <?php include './res/tabelsiswa1.php'; ?>
-                </div>
+                    </div>
+                </form>
+                <?php include './res/tabelsiswa1.php'; ?>
             </div>
         </section>
     </div>

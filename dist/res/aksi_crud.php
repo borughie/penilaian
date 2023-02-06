@@ -32,7 +32,7 @@ if (isset($_POST['blogin'])) {
             } elseif ($user_valid['tipe'] == "Siswa") {
                 session_start();
                 $_SESSION['pesan'] = 'login()';
-                header('location:../siswa.php');
+                header('location:../datasiswa.php');
             } else {
                 session_start();
                 $_SESSION['pesan'] = 'tipetidakada()';
@@ -76,16 +76,16 @@ if (isset($_POST['bubahsiswa'])) {
         if ($ubah) {
             session_start();
             $_SESSION['pesan'] = 'update()';
-            header('location:../siswa.php');
+            header('location:../datasiswa.php');
         } else {
             session_start();
             $_SESSION['pesan'] = 'gagalupdate()';
-            header('location:../siswa.php');
+            header('location:../datasiswa.php');
         }
     } else {
         session_start();
         $_SESSION['pesan'] = 'terlalubesar()';
-        header('location:../siswa.php');
+        header('location:../datasiswa.php');
     }
 }
 
@@ -97,11 +97,11 @@ if (isset($_POST['bresetpasswordsiswa'])) {
     if ($resetpasswordsiswa) {
         session_start();
         $_SESSION['pesan'] = 'update()';
-        header('location:../siswa.php');
+        header('location:../datasiswa.php');
     } else {
         session_start();
         $_SESSION['pesan'] = 'gagalupdate()';
-        header('location:../siswa.php');
+        header('location:../datasiswa.php');
     }
 }
 
@@ -112,7 +112,7 @@ if (isset($_POST['bsimpansiswa'])) {
     if ($dataceknis) {
         session_start();
         $_SESSION['pesan'] = 'nissudahada()';
-        header('location:../siswa.php');
+        header('location:../siswabaru.php');
     } else {
 
         $ekstensi_diperbolehkan = array('png', 'jpg', 'jpeg');
@@ -146,11 +146,11 @@ if (isset($_POST['bsimpansiswa'])) {
         if ($simpan || $simpanuser) {
             session_start();
             $_SESSION['pesan'] = 'simpan()';
-            header('location:../siswa.php');
+            header('location:../datasiswa.php');
         } else {
             session_start();
             $_SESSION['pesan'] = 'gagalsimpan()';
-            header('location:../siswa.php');
+            header('location:../datasiswa.php');
         }
     }
 }
@@ -171,11 +171,11 @@ if (isset($_POST['bhapussiswa'])) {
     if ($hapussiswa && $hapuspelanggaran && $hapususer) {
         session_start();
         $_SESSION['pesan'] = 'hapus()';
-        header('location:../siswa.php');
+        header('location:../datasiswa.php');
     } else {
         session_start();
         $_SESSION['pesan'] = 'gagal()';
-        header('location:../siswa.php');
+        header('location:../datasiswa.php');
     }
 }
 
@@ -264,11 +264,11 @@ if (isset($_POST['bhapuslaporan'])) {
     if ($hapus) {
         session_start();
         $_SESSION['pesan'] = 'hapus()';
-        header('location:../laporan.php');
+        header('location:../laporanonproses.php');
     } else {
         session_start();
         $_SESSION['pesan'] = 'gagal()';
-        header('location:../laporan.php');
+        header('location:../laporanonproses.php');
     }
 }
 
@@ -305,7 +305,7 @@ if (isset($_POST['bsimpanguru'])) {
     if ($dataceknis) {
         session_start();
         $_SESSION['pesan'] = 'nissudahada()';
-        header('location:../siswa.php');
+        header('location:../gurubaru.php');
     } else {
 
         $simpan = mysqli_query($koneksi, "INSERT INTO tbguru (nip, namaguru, walijurusan, walikelas, alamat, nohpguru)
@@ -327,11 +327,11 @@ if (isset($_POST['bsimpanguru'])) {
         if ($simpan && $simpanuser) {
             session_start();
             $_SESSION['pesan'] = 'simpan()';
-            header('location:../guru.php');
+            header('location:../dataguru.php');
         } else {
             session_start();
             $_SESSION['pesan'] = 'gagalsimpan()';
-            header('location:../guru.php');
+            header('location:../dataguru.php');
         }
     }
 }
@@ -346,6 +346,23 @@ if (isset($_POST['bhapusguru'])) {
     } else {
         session_start();
         $_SESSION['pesan'] = 'gagal()';
+        header('location:../guru.php');
+    }
+}
+
+
+if (isset($_POST['bresetpasswordguru'])) {
+    $password = md5(substr($_POST['tnip'], -5));
+    $resetpasswordguru = mysqli_query($koneksi, "UPDATE tbuser SET password = '$password' WHERE ni = '$_POST[tnip]'");
+
+    // Jika Ubah Sukses
+    if ($resetpasswordguru) {
+        session_start();
+        $_SESSION['pesan'] = 'update()';
+        header('location:../guru.php');
+    } else {
+        session_start();
+        $_SESSION['pesan'] = 'gagalupdate()';
         header('location:../guru.php');
     }
 }
@@ -383,5 +400,59 @@ if (isset($_POST['bsimpantambahan'])) {
         session_start();
         $_SESSION['pesan'] = 'gagalsimpan()';
         header('location:../laporanterverifikasi.php');
+    }
+}
+
+if (isset($_POST['bsimpankelas'])) {
+    $simpankelas = mysqli_query($koneksi, "INSERT INTO tbkelas (namakelas)
+                                       VALUES ('$_POST[tnamakelas]')");
+    if ($simpankelas) {
+        session_start();
+        $_SESSION['pesan'] = 'simpan()';
+        header('location:../tambahanadmin.php');
+    } else {
+        session_start();
+        $_SESSION['pesan'] = 'gagalsimpan()';
+        header('location:../tambahanadmin.php');
+    }
+}
+
+if (isset($_POST['bhapuskelas'])) {
+    $hapuskelas = mysqli_query($koneksi, "DELETE FROM tbkelas WHERE idkelas = '$_POST[tidkelas]'");
+    if ($hapuskelas) {
+        session_start();
+        $_SESSION['pesan'] = 'hapus()';
+        header('location:../tambahanadmin.php');
+    } else {
+        session_start();
+        $_SESSION['pesan'] = 'gagal()';
+        header('location:../tambahanadmin.php');
+    }
+}
+
+if (isset($_POST['bsimpanjurusan'])) {
+    $simpanjurusan = mysqli_query($koneksi, "INSERT INTO tbjurusan (namajurusan)
+                                       VALUES ('$_POST[tnamajurusan]')");
+    if ($simpanjurusan) {
+        session_start();
+        $_SESSION['pesan'] = 'simpan()';
+        header('location:../tambahanadmin.php');
+    } else {
+        session_start();
+        $_SESSION['pesan'] = 'gagalsimpan()';
+        header('location:../tambahanadmin.php');
+    }
+}
+
+if (isset($_POST['bhapusjurusan'])) {
+    $hapusjurusan = mysqli_query($koneksi, "DELETE FROM tbjurusan WHERE idjurusan = '$_POST[tidjurusan]'");
+    if ($hapusjurusan) {
+        session_start();
+        $_SESSION['pesan'] = 'hapus()';
+        header('location:../tambahanadmin.php');
+    } else {
+        session_start();
+        $_SESSION['pesan'] = 'gagal()';
+        header('location:../tambahanadmin.php');
     }
 }

@@ -116,7 +116,11 @@ if (isset($_SESSION['pesan'])) {
                             ?>
                                 <tr class="odd:bg-[#0a088a]/5 even:bg-[#0a088a]/10 hover:bg-gray-50 align-middle">
                                     <td class="hidden"><?= $data['idlaporan'] ?></td>
-                                    <td class="p-3 text-sm text-gray-700 text-center whitespace-nowrap"><img class="bg-blue-600 rounded-full overflow-hidden h-24 mx-auto" src="<?= @$data['fotolaporan'] == "" ? "./img/picture.png" : "img/laporan/" . $data['fotolaporan'] ?>"></td>
+                                    <td class="p-3 text-sm text-gray-700 text-center whitespace-nowrap">
+                                        <button type="button" class="p-1.5 text-xs font-bold uppercase tracking-wider rounded-lg text-blue-800 bg-blue-200/50 hover:bg-blue-400/60 active:bg-blue-400 transition-all" data-bs-toggle="modal" data-bs-target="#modalfoto<?= $data['idlaporan'] ?>" data-mdb-ripple="true" data-mdb-ripple-color="light">
+                                            <img class="bg-blue-600 rounded-full overflow-hidden h-24 mx-auto" src="<?= "img/laporan/" . $data['fotolaporan'] ?>">
+                                        </button>
+                                    </td>
                                     <td class="p-3 text-sm text-gray-700 text-center whitespace-nowrap"><?= $data['namasiswa'] ?></td>
                                     <td class="p-3 text-sm text-gray-700 text-center whitespace-nowrap"><?= $data['namapelanggaran'] ?></td>
                                     <td class="p-3 text-sm text-gray-700 text-center whitespace-nowrap"><?= $data['penguranganpoint'] ?></td>
@@ -127,9 +131,7 @@ if (isset($_SESSION['pesan'])) {
                                         </div>
                                     </td>
                                 </tr>
-                                <?php include "./res/konfirmasilaporan.php" ?>
-                                <?php include "./res/editlaporan.php" ?>
-                                <?php include "./res/hapuslaporan.php" ?>
+                                <?php include "./res/zoomfotopelanggaran.php" ?>
                             <?php endwhile; ?>
                         </tbody>
                     </table>

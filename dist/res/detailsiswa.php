@@ -8,13 +8,13 @@
                         <div class="grid grid-cols-8 grid-flow-row 2xl:gap-6 gap-3 text-left">
 
                             <div class="row-span-3 col-span-3">
-                                <div class="bg-[#1512d4]/30 rounded-xl text-center p-2 font-semibold text-xl">Foto Siswa
+                                <div class="bg-[#1512d4]/30 rounded-xl text-center p-2 font-semibold text-xl">
                                     <label for="editfotosiswa" class="flex flex-col items-center justify-center">
-                                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                            <div class="rounded-full w-40 h-40 bg-white flex items-center justify-center overflow-hidden bg-[#01004C]/5">
+                                        <div class="flex flex-col items-center justify-center p-3">
+                                            <div class="rounded-xl w-56 h-56 flex items-center justify-center overflow-hidden bg-[#01004C]/5">
                                                 <img src="<?= $data['fotosiswa'] == "" ? "./img/profil.png" : "img/siswa/" . $data['fotosiswa'] ?>" id="edituploadfotosiswa">
                                             </div>
-                                            <p id="editsrcfoto" class="mt-2 text-xs text-gray-100"><?= $data['fotosiswa'] == "" ? "SVG, PNG, JPG or GIF (MAX. 800x400px)" : $data['fotosiswa'] ?></p>
+                                            <p id="editsrcfoto" class="hidden mt-2 text-xs text-gray-100"><?= $data['fotosiswa'] == "" ? "SVG, PNG, JPG or GIF (MAX. 800x400px)" : $data['fotosiswa'] ?></p>
                                         </div>
                                         <input id="editfotosiswa" name="teditgambarsiswa" type="file" class="hidden" onchange="PreviewImage('editfotosiswa','edituploadfotosiswa','editsrcfoto');" />
                                     </label>
@@ -107,7 +107,6 @@
                         </div>
                         <div>
                             <button type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 py-2 w-32 text-sm font-semibold text-yellow-900 shadow-sm transition-all" name="bresetpasswordsiswa">Reset Password</button>
-
                             <button type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 py-2 w-32 text-sm font-semibold text-yellow-900 shadow-sm transition-all" name="bubahsiswa">Perbarui Data</button>
                         </div>
                     </div>

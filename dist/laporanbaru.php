@@ -155,7 +155,7 @@ if (isset($_GET['hal'])) {
 
                                     </div>
                                 </div>
-                                <div class="bg-gray-50 shadow-none px-4 py-3 text-right sm:px-6">
+                                <div class="bg-blue-900/40 rounded-b-lg shadow-sm shadow-blue-500/40 px-4 py-3 text-right">
                                     <button type="submit" class="inline-flex justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium text-white shadow-sm bg-blue-600 hover:bg-blue-700 active:bg-blue-800 transition-all" name="bsimpanlaporan" data-mdb-ripple="true" data-mdb-ripple-color="light">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 pt-0.5">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />

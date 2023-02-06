@@ -15,7 +15,7 @@
 
                             <div class="col-span-5">
                                 <label for="namaguru" class="block text-sm font-medium text-gray-700 ">Nama Guru</label>
-                                <input required maxlength="25" type="text" name="tnamaguru" id="namaguru" autocomplete="full-name" value="<?= $data['namaguru'] ?>" class="text-slate-900 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                <input required maxlength="25" type="text" name="tnamaguru" id="namaguru" autocomplete="given-name" value="<?= $data['namaguru'] ?>" class="text-slate-900 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                             </div>
 
                             <div class="col-span-4">
@@ -62,12 +62,13 @@
                         <div>
                             <button type="button" class="inline-flex justify-center rounded-md border border-transparent bg-gray-300 hover:bg-gray-400 active:bg-gray-500 py-2 w-32 text-sm font-semibold text-gray-800 shadow-sm transition-all" data-bs-dismiss="modal">Keluar</button>
                         </div>
-                        <div>
+                        <!-- <div>
                             <button type="button" class="inline-flex justify-center rounded-md border border-transparent bg-gray-300 hover:bg-gray-400 active:bg-gray-500 py-2 w-32 text-sm font-semibold text-gray-800 shadow-sm transition-all" data-bs-dismiss="modal">SP1</button>
                             <button type="button" class="inline-flex justify-center rounded-md border border-transparent bg-gray-300 hover:bg-gray-400 active:bg-gray-500 py-2 w-32 text-sm font-semibold text-gray-800 shadow-sm transition-all" data-bs-dismiss="modal">SP2</button>
                             <button type="button" class="inline-flex justify-center rounded-md border border-transparent bg-gray-300 hover:bg-gray-400 active:bg-gray-500 py-2 w-32 text-sm font-semibold text-gray-800 shadow-sm transition-all" data-bs-dismiss="modal">SP3</button>
-                        </div>
+                        </div> -->
                         <div>
+                            <button type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 py-2 w-32 text-sm font-semibold text-yellow-900 shadow-sm transition-all" name="bresetpasswordguru">Reset Password</button>
                             <button type="submit" class="inline-flex justify-center rounded-md border border-transparent bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 py-2 w-32 text-sm font-semibold text-yellow-900 shadow-sm transition-all" name="bubahguru">Perbarui Data</button>
                         </div>
                     </div>
