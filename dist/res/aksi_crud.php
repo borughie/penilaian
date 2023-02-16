@@ -32,7 +32,7 @@ if (isset($_POST['blogin'])) {
             } elseif ($user_valid['tipe'] == "Siswa") {
                 session_start();
                 $_SESSION['pesan'] = 'login()';
-                header('location:../datasiswa.php');
+                header('location:../siswa.php');
             } else {
                 session_start();
                 $_SESSION['pesan'] = 'tipetidakada()';

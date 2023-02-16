@@ -38,12 +38,12 @@
                     </a>
                     <a href="./laporanonproses.php" class="relative text-left hover:text-[#3230bb] transition-all duration-150 rounded-lg w-full block hover:bg-[#1512d4]/20 active:bg-[#1512d4]/50 xl:py-2 xl:px-4 2xl:py-2.5 hover:pl-5 text-truncate">
                         <div class="absolute h-6 w-1 left-0 rounded-l-[1px] rounded-r-2xl bg-inherit bg-white"></div>
-                        <span class="fi fi-br-document-signed relative top-0.5 mr-2.5"></span>
+                        <span class="fi fi-br-table-tree relative top-0.5 mr-2.5"></span>
                         On Proses
                     </a>
                     <a href="./laporanterverifikasi.php" class="relative text-left hover:text-[#3230bb] transition-all duration-150 rounded-lg w-full block hover:bg-[#1512d4]/20 active:bg-[#1512d4]/50 xl:py-2 xl:px-4 2xl:py-2.5 hover:pl-5 text-truncate">
                         <div class="absolute h-6 w-1 left-0 rounded-l-[1px] rounded-r-2xl bg-inherit bg-white"></div>
-                        <span class="fi fi-br-assept-document relative top-0.5 mr-2.5"></span>
+                        <span class="fi fi-br-table-tree relative top-0.5 mr-2.5"></span>
                         Terverifikasi
                     </a>
 
@@ -71,7 +71,7 @@
 
                     <a href="./datasiswa.php" class="relative text-left hover:text-[#3230bb] transition-all duration-150 rounded-lg w-full block hover:bg-[#1512d4]/20 active:bg-[#1512d4]/50 xl:py-2 xl:px-4 2xl:py-2.5 hover:pl-5 text-truncate">
                         <div class="absolute h-6 w-1 left-0 rounded-l-[1px] rounded-r-2xl bg-inherit"></div>
-                        <span class="fi fi-br-users relative top-0.5 mr-2.5"></span>
+                        <span class="fi fi-br-table-tree relative top-0.5 mr-2.5"></span>
                         Table Siswa
                     </a>
 
@@ -94,7 +94,7 @@
 
                     <a href="./dataguru.php" class="relative text-left hover:text-[#3230bb] transition-all duration-150 rounded-lg w-full block hover:bg-[#1512d4]/20 active:bg-[#1512d4]/50 xl:py-2 xl:px-4 2xl:py-2.5 hover:pl-5 text-truncate">
                         <div class="absolute h-6 w-1 left-0 rounded-l-[1px] rounded-r-2xl bg-inherit"></div>
-                        <span class="fi fi-br-users relative top-0.5 mr-2.5"></span>
+                        <span class="fi fi-br-table-tree relative top-0.5 mr-2.5"></span>
                         Table Guru
                     </a>
 
@@ -110,13 +110,13 @@
 
         </div> <!-- Menu -->
         <div class="mx-auto flex flex-col justify-center w-full">
-            <div class="bg-white shadow-sm border p-3 rounded-3xl relative mx-3 mb-4">
+            <!-- <div class="bg-white shadow-sm border p-3 rounded-3xl relative mx-3 mb-4">
                 <div class="flex flex-col justify-center my-6">
                     <div class="text-xl font-semibold text-truncate"><?= ucwords($_SESSION['nama']) ?></div>
                     <div class="text-sm text-truncate"><?= ucwords($_SESSION['tipe']) ?></div>
                 </div>
                 <a href="#" class="h-12 bg-[#1512d4]/30 rounded-2xl flex justify-center items-center">asd</a>
-            </div>
+            </div> -->
             <a href="./res/logout.php" class="bg-[#01004C]/5 text-center text-[#01004C] rounded-full transition-all duration-150 hover:bg-[#0a088a]/10 active:bg-[#1512d4]/30 xl:mx-14 2xl:mx-20 xl:py-2 2xl:py-2.5 font-semibold">Keluar<span class="fi fi-br-sign-out-alt relative top-0.5 ml-2"></span></a>
         </div>
     </div>

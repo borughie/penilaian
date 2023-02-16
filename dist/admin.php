@@ -28,6 +28,8 @@ $bulan6 = date('m') - 6;
 $monthName6 = date('F', mktime(0, 0, 0, $bulan6, 10));
 
 
+$bulan = "SELECT * FROM tblaporan ORDER BY month(tgllaporan) DESC LIMIT 6";
+
 
 $cekppb1 = "SELECT * FROM tblaporan WHERE month(tgllaporan) = '$bulan1'";
 $datappb1 = mysqli_query($koneksi, $cekppb1);
@@ -116,10 +118,14 @@ if ($jam >= 5 && $jam < 11) {
             </div>
 
             <div class="my-3 rounded-2xl relative flex items-center justify-between">
-                <div class="grid grid-cols-4 grid-flow-row gap-3 items-center justify-between w-full">
+                <div class="grid grid-cols-5 grid-flow-row gap-3 items-center justify-between w-full">
                     <div class="w-full col-span-1 bg-[#1512d4]/10 shadow-sm rounded-lg relative p-4 h-24">
                         <div class="text-left">Laporan Bulan Ini</div>
                         <div class="font-semibold text-2xl text-right absolute bottom-2 right-4"><?= $tamplilppb ?></div>
+                    </div>
+                    <div class="w-full col-span-1 bg-[#1512d4]/10 shadow-sm rounded-lg relative p-4 h-24">
+                        <div class="text-left">On Proses</div>
+                        <div class="font-semibold text-2xl text-right absolute bottom-2 right-4"><?= $tamplilppbop ?></div>
                     </div>
                     <div class="col-span-3 row-span-4 bg-[#1512d4]/10 shadow-lg rounded-lg overflow-hidden h-full relative">
                         <div class="py-3 px-5 bg-gray-50">Pelanggaran 6 Bulan Terakhir</div>
@@ -152,10 +158,7 @@ if ($jam >= 5 && $jam < 11) {
                             );
                         </script>
                     </div>
-                    <div class="w-full col-span-1 bg-[#1512d4]/10 shadow-sm rounded-lg relative p-4 h-24">
-                        <div class="text-left">On Proses</div>
-                        <div class="font-semibold text-2xl text-right absolute bottom-2 right-4"><?= $tamplilppbop ?></div>
-                    </div>
+
                     <div class="w-full col-span-1 bg-[#1512d4]/10 shadow-sm rounded-lg relative p-4 h-24">
                         <div class="text-left">Tambahan</div>
                         <div class="font-semibold text-2xl text-right absolute bottom-2 right-4"><?= $tamplilppbt ?></div>
@@ -168,67 +171,52 @@ if ($jam >= 5 && $jam < 11) {
                 </div>
             </div>
         </section>
+        <section id="right-sidebar" class="col-span-3 text-center h-screen mx-7">
+            <div class="mt-10 mb-6 flex justify-between items-center">
+                <div class="text-2xl font-semibold">Laporan</div>
+                <div class="dropdown relative">
+                    <button class="dropdown-toggle w-10 h-10 rounded-full bg-white shadow-sm hover:bg-[#0a088a]/10 active:bg-[#1512d4]/30" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"><span class="fi fi-br-menu-dots-vertical relative top-0.5 text-[#01004C]"></button>
+                    <ul class="dropdown-menu min-w-max absolute hidden bg-white z-50 float-right list-none text-left rounded-lg shadow-lg" aria-labelledby="dropdownMenuButton1">
+                        <li>Laporan 1</li>
+                        <li>Laporan 1</li>
+                        <li>Laporan 1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-xl font-semibold mt-8 py-2 shadow-sm border bg-[#0a088a]/10 rounded-t-xl">5 Pelanggaran Tertinggi</div>
+            <div class="flex flex-col items-center gap-y-2 py-2 shadow-sm border bg-white rounded-b-xl">
+                <a href="" class="bg-[#01004C] text-left text-slate-50 rounded-full shadow-sm transition-all duration-150 flex items-center hover:bg-[#0a088a] active:bg-[#1512d4] pl-1.5 pr-3.5 py-1.5 xl:text-sm 2xl:text-xl xl:font-normal 2xl:font-semibold"><span class="fi fi-br-1 text-[#01004C] bg-slate-50 h-1 w-1 p-4 rounded-full flex items-center justify-center font-bold mr-2.5"></span>Dashboard</a>
+                <a href="" class="bg-[#01004C] text-left text-slate-50 rounded-full shadow-sm transition-all duration-150 flex items-center hover:bg-[#0a088a] active:bg-[#1512d4] pl-1.5 pr-3.5 py-1.5 xl:text-sm 2xl:text-xl xl:font-normal 2xl:font-semibold"><span class="fi fi-br-2 text-[#01004C] bg-slate-50 h-1 w-1 p-4 rounded-full flex items-center justify-center font-bold mr-2.5"></span>Dashboard</a>
+                <a href="" class="bg-[#01004C] text-left text-slate-50 rounded-full shadow-sm transition-all duration-150 flex items-center hover:bg-[#0a088a] active:bg-[#1512d4] pl-1.5 pr-3.5 py-1.5 xl:text-sm 2xl:text-xl xl:font-normal 2xl:font-semibold"><span class="fi fi-br-3 text-[#01004C] bg-slate-50 h-1 w-1 p-4 rounded-full flex items-center justify-center font-bold mr-2.5"></span>Dashboard</a>
+                <a href="" class="bg-[#01004C] text-left text-slate-50 rounded-full shadow-sm transition-all duration-150 flex items-center hover:bg-[#0a088a] active:bg-[#1512d4] pl-1.5 pr-3.5 py-1.5 xl:text-sm 2xl:text-xl xl:font-normal 2xl:font-semibold"><span class="fi fi-br-4 text-[#01004C] bg-slate-50 h-1 w-1 p-4 rounded-full flex items-center justify-center font-bold mr-2.5"></span>Dashboard</a>
+                <a href="" class="bg-[#01004C] text-left text-slate-50 rounded-full shadow-sm transition-all duration-150 flex items-center hover:bg-[#0a088a] active:bg-[#1512d4] pl-1.5 pr-3.5 py-1.5 xl:text-sm 2xl:text-xl xl:font-normal 2xl:font-semibold"><span class="fi fi-br-5 text-[#01004C] bg-slate-50 h-1 w-1 p-4 rounded-full flex items-center justify-center font-bold mr-2.5"></span>Dashboard</a>
+            </div>
+
+            <div class="mt-6 mb-2 text-xl text-left font-semibold">Penilaian Terakhir</div>
+            <?php
+
+            $q = "SELECT * FROM tblaporan ORDER BY idlaporan DESC LIMIT 3";
+            $query = mysqli_query($koneksi, $q) or die(mysqli_error($koneksi));
+            while ($data = mysqli_fetch_array($query)) :
+
+            ?>
+                <a href="#" class="bg-gradient-to-r from-white via-white to-white <?= $data['status'] == "Selesai" ? "hover:to-green-400" : "hover:to-yellow-400" ?> border rounded-2xl shadow-sm flex items-center justify-between my-3 pr-2 overflow-hidden">
+                    <img src="<?= $data['fotolaporan'] == "" ? "./img/picture.png" : "img/laporan/" . $data['fotolaporan'] ?>" class="h-16 w-16 bg-slate-300 shadow-sm">
+
+                    <div class="text-center">
+                        <div class="font-semibold text-truncate"><?= $data['namasiswa'] ?></div>
+                        <div class="text-sm text-truncate"><?= $data['namapelanggaran'] ?></div>
+                    </div>
+                    <div class="text-left font-semibold text-xl bg-[#0a088a]/10 rounded-2xl p-3">-<?= $data['penguranganpoint'] ?></div>
+                </a>
+
+            <?php endwhile; ?>
+
+        </section>
     </div>
 
-    <!-- <section id="right-sidebar" class="col-span-3 text-center h-screen mx-7">
-        <div class="mt-10 mb-6 flex justify-between items-center">
-            <div class="text-2xl font-semibold">Laporan</div>
-            <div class="dropdown relative">
-                <button class="dropdown-toggle w-10 h-10 rounded-full bg-white shadow-sm hover:bg-[#0a088a]/10 active:bg-[#1512d4]/30" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"><span class="fi fi-br-menu-dots-vertical relative top-0.5 text-[#01004C]"></button>
-                <ul class="dropdown-menu min-w-max absolute hidden bg-white z-50 float-right list-none text-left rounded-lg shadow-lg" aria-labelledby="dropdownMenuButton1">
-                    <li>Laporan 1</li>
-                    <li>Laporan 1</li>
-                    <li>Laporan 1</li>
-                </ul>
-            </div>
-        </div>
 
-        <div class="text-xl font-semibold mt-8 py-2 shadow-sm border bg-[#0a088a]/10 rounded-t-xl">5 Pelanggaran Tertinggi</div>
-        <div class="flex flex-col items-center gap-y-2 py-2 shadow-sm border bg-white rounded-b-xl">
-            <a href="" class="bg-[#01004C] text-left text-slate-50 rounded-full shadow-sm transition-all duration-150 flex items-center hover:bg-[#0a088a] active:bg-[#1512d4] pl-1.5 pr-3.5 py-1.5 xl:text-sm 2xl:text-xl xl:font-normal 2xl:font-semibold"><span class="fi fi-br-1 text-[#01004C] bg-slate-50 h-1 w-1 p-4 rounded-full flex items-center justify-center font-bold mr-2.5"></span>Dashboard</a>
-            <a href="" class="bg-[#01004C] text-left text-slate-50 rounded-full shadow-sm transition-all duration-150 flex items-center hover:bg-[#0a088a] active:bg-[#1512d4] pl-1.5 pr-3.5 py-1.5 xl:text-sm 2xl:text-xl xl:font-normal 2xl:font-semibold"><span class="fi fi-br-2 text-[#01004C] bg-slate-50 h-1 w-1 p-4 rounded-full flex items-center justify-center font-bold mr-2.5"></span>Dashboard</a>
-            <a href="" class="bg-[#01004C] text-left text-slate-50 rounded-full shadow-sm transition-all duration-150 flex items-center hover:bg-[#0a088a] active:bg-[#1512d4] pl-1.5 pr-3.5 py-1.5 xl:text-sm 2xl:text-xl xl:font-normal 2xl:font-semibold"><span class="fi fi-br-3 text-[#01004C] bg-slate-50 h-1 w-1 p-4 rounded-full flex items-center justify-center font-bold mr-2.5"></span>Dashboard</a>
-            <a href="" class="bg-[#01004C] text-left text-slate-50 rounded-full shadow-sm transition-all duration-150 flex items-center hover:bg-[#0a088a] active:bg-[#1512d4] pl-1.5 pr-3.5 py-1.5 xl:text-sm 2xl:text-xl xl:font-normal 2xl:font-semibold"><span class="fi fi-br-4 text-[#01004C] bg-slate-50 h-1 w-1 p-4 rounded-full flex items-center justify-center font-bold mr-2.5"></span>Dashboard</a>
-            <a href="" class="bg-[#01004C] text-left text-slate-50 rounded-full shadow-sm transition-all duration-150 flex items-center hover:bg-[#0a088a] active:bg-[#1512d4] pl-1.5 pr-3.5 py-1.5 xl:text-sm 2xl:text-xl xl:font-normal 2xl:font-semibold"><span class="fi fi-br-5 text-[#01004C] bg-slate-50 h-1 w-1 p-4 rounded-full flex items-center justify-center font-bold mr-2.5"></span>Dashboard</a>
-        </div>
-
-        <div class="mt-6 mb-2 text-xl text-left font-semibold">Penilaian Terakhir</div>
-        <a href="#" class="bg-white border rounded-2xl shadow-sm p-3 flex items-center justify-between my-3">
-            <div class="text-left">
-                <div class="font-semibold text-xl">Adi Gunawan</div>
-                <div>Kelas : XII - UPJ</div>
-            </div>
-            <div class="text-left font-semibold text-xl bg-[#0a088a]/10 rounded-2xl p-3">+5</div>
-        </a>
-        <a href="#" class="bg-white border rounded-2xl shadow-sm p-3 flex items-center justify-between my-3">
-            <div class="text-left">
-                <div class="font-semibold text-xl">Adi Gunawan</div>
-                <div>Kelas : XII - UPJ</div>
-            </div>
-            <div class="text-left font-semibold text-xl bg-[#0a088a]/10 rounded-2xl p-3">+5</div>
-        </a>
-        <a href="#" class="bg-white border rounded-2xl shadow-sm p-3 flex items-center justify-between my-3">
-            <div class="text-left">
-                <div class="font-semibold text-xl">Adi Gunawan</div>
-                <div>Kelas : XII - UPJ</div>
-            </div>
-            <div class="text-left font-semibold text-xl bg-[#0a088a]/10 rounded-2xl p-3">+5</div>
-        </a>
-        <a href="#" class="bg-white border rounded-2xl shadow-sm p-3 flex items-center justify-between my-3">
-            <div class="text-left">
-                <div class="font-semibold text-xl">Adi Gunawan</div>
-                <div>Kelas : XII - UPJ</div>
-            </div>
-            <div class="text-left font-semibold text-xl bg-[#0a088a]/10 rounded-2xl p-3">+5</div>
-        </a>
-        <a href="#" class="bg-white border rounded-2xl shadow-sm p-3 hidden 2xl:flex items-center justify-between my-3">
-            <div class="text-left">
-                <div class="font-semibold text-xl">Adi Gunawan</div>
-                <div>Kelas : XII - UPJ</div>
-            </div>
-            <div class="text-left font-semibold text-xl bg-[#0a088a]/10 rounded-2xl p-3">+5</div>
-        </a>
-    </section> -->
 </body>
 
 </html>
